@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
 	devtool: 'inline-source-map',
 	entry: {
-		main: path.resolve(__dirname, "src/main.js"),
+		main: path.resolve(__dirname, "src/index.js"),
 		vendor: ['react', 'react-dom', 'react-router', 'babel-polyfill', 'redux', 'react-redux']
 	},
 	output: {

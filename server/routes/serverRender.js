@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouterContext, match } from 'react-router';
-import createRoutes from './../../src/route/routes';
+import createRoutes, {routes} from './../../src/route/routes';
 import createMemoryHistory from 'history/lib/createMemoryHistory';
 import express from 'express';
 import configureStore from './../../src/store/configureStore';
@@ -17,7 +17,7 @@ serverRender.route('*')
 	.get( (req, res) => {
 		const history = createMemoryHistory();
 		const store = configureStore();
-		const routes = createRoutes(history);
+		// const routes = createRoutes(history);
 
 		match( { routes, location: req.originalUrl }, (err, redirection, renderProps) => {
 			if (redirection) {

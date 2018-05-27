@@ -5,7 +5,15 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { Link } from 'react-router';
 
+
 class Mine extends Component {
+	static preLoad(option) {
+		if (option && option.store) {
+			return Promise.resolve(option.store.dispatch(requestMineList(3)));
+		} else {
+			requestMineList(3);
+		}
+	}
 
 	constructor(props) {
 		super(props);

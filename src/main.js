@@ -11,7 +11,6 @@ export default class Main extends Component {
         
         return(
             <div>
-                <div>11124444422</div>
                 {ChildInstance}
              </div>
         )

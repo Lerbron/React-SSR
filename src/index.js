@@ -55,12 +55,3 @@ function preload(components, store) {
   
 	return Promise.all(preloads);
   }
-
-// render(
-// 	<Provider store={store}>
-// 		{
-// 			createRouter(browserHistory)
-// 		}
-// 	</Provider>,
-// 	document.getElementById('app'),
-// );

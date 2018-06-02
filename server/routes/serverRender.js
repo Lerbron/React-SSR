@@ -10,14 +10,13 @@ import { Provider } from 'react-redux';
 const serverRender = express.Router();
 
 function getReduxPromise(props, store) {
-	const comp = props.components[props.components.length-1].WrappedComponent;
+	const comp = props.components[props.components.length -1].WrappedComponent;
 	return comp.preLoad ? comp.preLoad({store, props}): Promise.resolve();
 }
 serverRender.route('*')
 	.get( (req, res) => {
 		const history = createMemoryHistory();
 		const store = configureStore();
-		// const routes = createRoutes(history);
 
 		match( { routes, location: req.originalUrl }, (err, redirection, renderProps) => {
 			if (redirection) {

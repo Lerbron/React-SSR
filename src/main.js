@@ -6,9 +6,12 @@ export default class Main extends Component {
     }
 
     render() {
+        const {children} = this.props;
+        const ChildInstance = React.Children.only(children);
+        
         return(
             <div>
-                {this.props.children}
+                {ChildInstance}
              </div>
         )
     }

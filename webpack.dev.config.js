@@ -75,7 +75,7 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': {
 				ENV: JSON.stringify('development'),
-				NODE_ENV: JSON.stringify('development')
+				NODE_ENV: JSON.stringify( process.env.NODE_ENV !== 'production' ? 'development': 'production')
 			},
 			'__NODE__': JSON.stringify(false)
 		}),
@@ -87,7 +87,7 @@ module.exports = {
 		new webpack.LoaderOptionsPlugin({
 			debug: true
 		}),
-		new CleanWebpackPlugin('dist'),
+		// new CleanWebpackPlugin('dist'),
 		// new webpack.optimize.UglifyJsPlugin({                 // 压缩打包的js文件
 		// 	sourceMap: true,                                    // 当你的js编译压缩后，需要继续读取原始脚本信息的行数，位置，警告等有效调试信息时,手动开启UglifyJsPlugin 的配置项：sourceMap: true
 		// 	compress: {
